@@ -26,5 +26,11 @@ namespace mv.Controllers
 
             return View();
         }
+
+        public ActionResult SetLanguage(string language)
+        {
+            Session["lang"] = language;
+            return Redirect(Request.UrlReferrer.ToString());//13.dk da kaldım
+        }
     }
 }
