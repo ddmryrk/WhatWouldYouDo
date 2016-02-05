@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_LayoutBolumlu</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Anasayfa", "Home", "Home") |
+        @Html.ActionLink("Blog", "About", "Home") |
+        @Html.ActionLink("İletişim", "Contact", "Home")
+    </div>
+    <div style="width:600px; height:50px; background-color:yellow; color:red; font:30px;">
+        @RenderSection("SayfaAdi")
+    </div>
+    <div>
+        <div style="width:400px; height:200px; background-color:gray; color:black; font:20px; float:left;">
+            @RenderSection("SerbestIcerik")
+        </div>
+        <div style="width: 200px; height: 200px; background-color: black; color: white; font: 24px; float: left;">
+            Sağdaki alan sabittir
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div style="width:600px; height:100px; background-color:red; color:yellow; font:12px;">
+        Tüm Hakları Saklıdır | Adres: Ankara
+    </div>
+</body>
+</html>
