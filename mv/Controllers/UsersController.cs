@@ -8,15 +8,13 @@ namespace mv.Controllers
 {
     public class UsersController : Controller
     {
+        DataModel.Model1 du = new DataModel.Model1();
         // GET: Users
         public ActionResult Index()
         {
+            du.SaveChanges();
             return View();
         }
-        public ActionResult Users()
-        {
-
-            return view();
-        }
+        
     }
 }

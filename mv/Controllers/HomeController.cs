@@ -34,11 +34,6 @@ namespace mv.Controllers
             
         }
 
-        public ActionResult View()
-        {
-            return View();
-
-        }
 
     }
 }

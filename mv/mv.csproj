@@ -60,6 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -172,6 +174,21 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RateController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="DataModel\BlackList.cs" />
+    <Compile Include="DataModel\Comments.cs" />
+    <Compile Include="DataModel\Complaints.cs" />
+    <Compile Include="DataModel\Conversations.cs" />
+    <Compile Include="DataModel\C__MigrationHistory.cs" />
+    <Compile Include="DataModel\Likes.cs" />
+    <Compile Include="DataModel\Messages.cs" />
+    <Compile Include="DataModel\Model1.cs" />
+    <Compile Include="DataModel\Pictures.cs" />
+    <Compile Include="DataModel\Points.cs" />
+    <Compile Include="DataModel\Posts.cs" />
+    <Compile Include="DataModel\Rates.cs" />
+    <Compile Include="DataModel\UserRelationShips.cs" />
+    <Compile Include="DataModel\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -278,6 +295,7 @@
     <Content Include="Views\Rate\Index.cshtml" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Home\View.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
