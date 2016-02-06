@@ -33,5 +33,12 @@ namespace mv.Controllers
             return Redirect(Request.UrlReferrer.ToString());//13.dk da kaldım
             
         }
+
+        public ActionResult View()
+        {
+            return View();
+
+        }
+
     }
 }
