@@ -119,5 +119,6 @@
   </resheader>
   <data name="AppName" xml:space="preserve">
     <value>Uygulama İsmi</value>
+    <comment>a</comment>
   </data>
 </root>

@@ -31,6 +31,7 @@ namespace mv.Controllers
         {
             Session["lang"] = language;
             return Redirect(Request.UrlReferrer.ToString());//13.dk da kaldım
+            
         }
     }
 }
