@@ -8,6 +8,12 @@ namespace mv.DataModel
 
     public partial class Rates
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Rates()
+        {
+            RateUserRelations = new HashSet<RateUserRelations>();
+        }
+
         public int ID { get; set; }
 
         [Required]
@@ -17,8 +23,7 @@ namespace mv.DataModel
 
         public int RateCount { get; set; }
 
-        public long UserID { get; set; }
-
-        public virtual Users Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RateUserRelations> RateUserRelations { get; set; }
     }
 }

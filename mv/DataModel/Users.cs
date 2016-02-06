@@ -17,7 +17,8 @@ namespace mv.DataModel
             Conversations1 = new HashSet<Conversations>();
             Points = new HashSet<Points>();
             Posts = new HashSet<Posts>();
-            Rates = new HashSet<Rates>();
+            RateUserRelations = new HashSet<RateUserRelations>();
+            RateUserRelations1 = new HashSet<RateUserRelations>();
             UserRelationShips = new HashSet<UserRelationShips>();
             UserRelationShips1 = new HashSet<UserRelationShips>();
         }
@@ -83,7 +84,10 @@ namespace mv.DataModel
         public virtual ICollection<Posts> Posts { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rates> Rates { get; set; }
+        public virtual ICollection<RateUserRelations> RateUserRelations { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RateUserRelations> RateUserRelations1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRelationShips> UserRelationShips { get; set; }

@@ -8,11 +8,10 @@ namespace mv.DataModel
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=WWYD")
+            : base("name=Model1")
         {
         }
 
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<BlackList> BlackList { get; set; }
         public virtual DbSet<Comments> Comments { get; set; }
         public virtual DbSet<Complaints> Complaints { get; set; }
@@ -23,6 +22,7 @@ namespace mv.DataModel
         public virtual DbSet<Points> Points { get; set; }
         public virtual DbSet<Posts> Posts { get; set; }
         public virtual DbSet<Rates> Rates { get; set; }
+        public virtual DbSet<RateUserRelations> RateUserRelations { get; set; }
         public virtual DbSet<UserRelationShips> UserRelationShips { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
@@ -94,6 +94,12 @@ namespace mv.DataModel
                 .Property(e => e.PictureLoc)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Rates>()
+                .HasMany(e => e.RateUserRelations)
+                .WithRequired(e => e.Rates)
+                .HasForeignKey(e => e.RateID)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Users>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
@@ -163,9 +169,15 @@ namespace mv.DataModel
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()
-                .HasMany(e => e.Rates)
+                .HasMany(e => e.RateUserRelations)
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.UserID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.RateUserRelations1)
+                .WithRequired(e => e.Users1)
+                .HasForeignKey(e => e.UserIDRated)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()
