@@ -13,7 +13,7 @@ namespace mv.Controllers
         {
             return View();
         }
-        public IAsyncResult Users()
+        public ActionResult Users()
         {
 
             return view();
