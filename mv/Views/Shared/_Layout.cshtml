@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,15 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("What Would You Do?", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
@@ -35,6 +34,14 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
+    </div>
+    <div style="float:right">@*Language Icons*@
+        <a href='@Url.Action("SetLanguage","Home",new { language = "tr-TR"})' title="Turkish">
+            <img src='@Url.Content("~/Content/lang-icon/turkish.png")' alt="Turkish" />
+        </a>|
+        <a href='@Url.Action("SetLanguage","Home",new { language = "en-US"})' title="English">
+            <img src='@Url.Content("~/Content/lang-icon/english.png")' alt="English" />
+        </a>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
