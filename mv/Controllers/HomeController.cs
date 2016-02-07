@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,7 +31,7 @@ namespace mv.Controllers
         public ActionResult SetLanguage(string language)
         {
             Session["lang"] = language;
-            return Redirect(Request.UrlReferrer.ToString());//13.dk da kaldım
+            return Redirect(Request.UrlReferrer.ToString());
             
         }
 
