@@ -187,6 +187,7 @@
     <Compile Include="DataModel\Points.cs" />
     <Compile Include="DataModel\Posts.cs" />
     <Compile Include="DataModel\Rates.cs" />
+    <Compile Include="DataModel\RateUserRelations.cs" />
     <Compile Include="DataModel\UserRelationShips.cs" />
     <Compile Include="DataModel\Users.cs" />
     <Compile Include="Global.asax.cs">
@@ -202,8 +203,8 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Views\Resources.tr-TR.Designer.cs">
-      <DependentUpon>Resources.tr-TR.resx</DependentUpon>
+    <Compile Include="Views\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -285,7 +286,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -310,9 +313,9 @@
       <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Resources.tr-TR.resx">
+    <EmbeddedResource Include="Views\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
