@@ -10,6 +10,15 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
+        <div style="float:right">
+            @*Language Icons*@
+        <a href='@Url.Action("SetLanguage","Home",new { language = "tr-TR"})' title="Turkish">
+            <img src='@Url.Content("~/Content/lang-icon/turkish.png")' alt="Turkish" />
+        </a>|
+        <a href='@Url.Action("SetLanguage","Home",new { language = "en-US"})' title="English">
+            <img src='@Url.Content("~/Content/lang-icon/english.png")' alt="English" />
+        </a>
+    </div>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -35,14 +44,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    <div style="float:right">@*Language Icons*@
-        <a href='@Url.Action("SetLanguage","Home",new { language = "tr-TR"})' title="Turkish">
-            <img src='@Url.Content("~/Content/lang-icon/turkish.png")' alt="Turkish" />
-        </a>|
-        <a href='@Url.Action("SetLanguage","Home",new { language = "en-US"})' title="English">
-            <img src='@Url.Content("~/Content/lang-icon/english.png")' alt="English" />
-        </a>
-    </div>
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

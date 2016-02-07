@@ -119,6 +119,11 @@
   </resheader>
   <data name="AppName" xml:space="preserve">
     <value>Uygulama İsmi</value>
-    <comment>a</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Üye Ol</value>
   </data>
 </root>
