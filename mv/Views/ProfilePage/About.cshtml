@@ -1,0 +1,29 @@
+﻿@model  IEnumerable<mv.DataModel.Users>
+
+<div class="col-md-3" style="text-align:center;float:left;background-color:darkslategrey">
+    <br /><br /><br />
+
+    @foreach (var item in Model)
+    {
+
+
+        <div>
+
+            <img class="img-circle" src="@Url.Content(@item.PictureLoc)" width="200" height="200" />
+
+        </div>
+        <div>
+            <h1>@item.Name @item.Surname</h1>
+
+        </div>
+        <div>
+            <h4><b>Şehir:</b>@item.City</h4>
+            <h4><b>Ülke:</b> @item.Country</h4>
+            <h4><b> Doğum Tarihi:</b>@item.Birthdate.ToShortDateString()  </h4>
+            <h4><b>E-mail:</b>@item.Email</h4>
+        </div>
+
+    }
+</div>
+
+

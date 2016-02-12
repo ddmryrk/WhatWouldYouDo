@@ -6,6 +6,7 @@
 
 @try
 {
+    @Html.Action("About", "ProfilePage")
     @Html.Action("Friends", "ProfilePage")
 }
 catch (HttpException ex)

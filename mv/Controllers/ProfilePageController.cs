@@ -16,6 +16,17 @@ namespace mv.Controllers
             return View();
         }
 
+        public ActionResult About(int ID = 6)
+        {
+            var kullanici = (from item in ent.Users
+                             where item.ID == ID
+                             select item).ToList();
+
+
+            return PartialView(kullanici);
+        }
+
+
         public ActionResult Friends()
         {
             //ession["UserID"] = 1;
