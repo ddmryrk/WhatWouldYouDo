@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@try
+{
+    @Html.Action("Friends", "ProfilePage")
+}
+catch (HttpException ex)
+{
+    string hata = ex.Message;
+}
+
+

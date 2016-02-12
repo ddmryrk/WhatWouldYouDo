@@ -1,0 +1,12 @@
+﻿@model List<mv.DataModel.Users>
+
+<div style="border: 1px solid black; padding: 20px; text-align: center;" class="col-md-12">
+    <h2>Friends</h2>
+    @foreach (var item in Model)
+    {
+        <div  class="col-md-3">
+            <img src="~/Content/images.jpg" class="img-circle" style="max-height:100px;max-width:100px" />
+            <h3>@item.Name @item.Surname</h3>
+        </div>
+    }
+</div>

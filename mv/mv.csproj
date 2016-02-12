@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfilePageController.cs" />
     <Compile Include="Controllers\RateController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DataModel\BlackList.cs" />
@@ -214,6 +215,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images.jpg" />
     <Content Include="Content\lang-icon\english.png" />
     <Content Include="Content\lang-icon\turkish.png" />
     <Content Include="Content\star-rating.css" />
@@ -299,6 +301,8 @@
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Home\View.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\ProfilePage\Index.cshtml" />
+    <Content Include="Views\ProfilePage\Friends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
