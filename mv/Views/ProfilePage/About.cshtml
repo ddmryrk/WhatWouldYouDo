@@ -1,29 +1,15 @@
-﻿@model  IEnumerable<mv.DataModel.Users>
+﻿@model mv.DataModel.Users
 
 <div class="col-md-3" style="text-align:center;float:left;background-color:darkslategrey">
-    <br /><br /><br />
+    <br />
+    <br />
+    <img class="img-circle" src="@Url.Content(Model.PictureLoc)" width="200" height="200" />
+    <hr />
 
-    @foreach (var item in Model)
-    {
+    <b>User : </b>@Model.Name  @Model.Surname<br />
+    <b>Location : </b>@Model.Country | @Model.City<br />
+    <b>Gender : </b> @if (Model.Gender) { Write(mv.Views.Resources.Male); } else { Write(mv.Views.Resources.Male); }
 
 
-        <div>
 
-            <img class="img-circle" src="@Url.Content(@item.PictureLoc)" width="200" height="200" />
-
-        </div>
-        <div>
-            <h1>@item.Name @item.Surname</h1>
-
-        </div>
-        <div>
-            <h4><b>Şehir:</b>@item.City</h4>
-            <h4><b>Ülke:</b> @item.Country</h4>
-            <h4><b> Doğum Tarihi:</b>@item.Birthdate.ToShortDateString()  </h4>
-            <h4><b>E-mail:</b>@item.Email</h4>
-        </div>
-
-    }
 </div>
-
-

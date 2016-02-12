@@ -120,8 +120,14 @@
   <data name="AppName" xml:space="preserve">
     <value>Uygulama İsmi</value>
   </data>
+  <data name="Female" xml:space="preserve">
+    <value>Kadın</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş Yap</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Erkek</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Üye Ol</value>

@@ -16,11 +16,11 @@ namespace mv.Controllers
             return View();
         }
 
-        public ActionResult About(int ID = 6)
+        public ActionResult About()
         {
             var kullanici = (from item in ent.Users
-                             where item.ID == ID
-                             select item).ToList();
+                             where item.ID == 1
+                             select item).FirstOrDefault();
 
 
             return PartialView(kullanici);
