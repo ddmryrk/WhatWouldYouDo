@@ -305,7 +305,7 @@
     <Content Include="Views\ProfilePage\Index.cshtml" />
     <Content Include="Views\ProfilePage\Friends.cshtml" />
     <Content Include="Views\ProfilePage\About.cshtml" />
-    <Content Include="Views\Users\login.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

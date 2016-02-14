@@ -32,5 +32,9 @@ namespace mv.Controllers
             return RedirectToAction("Index", "ProfilePage");
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }
