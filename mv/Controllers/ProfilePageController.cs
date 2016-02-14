@@ -18,10 +18,10 @@ namespace mv.Controllers
 
         public ActionResult About()
         {
+            Users u = (Users)Session["KullaniciLogin"];
             var kullanici = (from item in ent.Users
-                             where item.ID == 6
+                             where item.ID == u.ID
                              select item).FirstOrDefault();
-
 
             return PartialView(kullanici);
         }

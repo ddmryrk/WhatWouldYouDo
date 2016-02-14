@@ -31,6 +31,7 @@ namespace mv.DataModel
 
         [Required]
         [StringLength(10)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required]
