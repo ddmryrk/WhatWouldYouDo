@@ -17,13 +17,13 @@ namespace mv.Controllers
             return View();
         }
 
-        public ActionResult login()
+        public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult login(DataModel.Users u)
+        public ActionResult Login(DataModel.Users u)
         {
             var kullanici = (from item in ent.Users
                              where item.Email == u.Email && item.Password == u.Password
