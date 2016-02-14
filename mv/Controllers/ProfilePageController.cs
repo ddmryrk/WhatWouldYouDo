@@ -19,7 +19,7 @@ namespace mv.Controllers
         public ActionResult About()
         {
             var kullanici = (from item in ent.Users
-                             where item.ID == 1
+                             where item.ID == 6
                              select item).FirstOrDefault();
 
 
@@ -31,7 +31,7 @@ namespace mv.Controllers
         {
             //ession["UserID"] = 1;
             var friends = (from f in ent.UserRelationShips
-                           where f.UserID1 ==1 && f.Status == 2
+                           where f.UserID1 == 6 && f.Status == 2
                            select f.UserID2).ToList();
             List<Users> friendDetails = new List<Users>();
             foreach (var item in friends)
