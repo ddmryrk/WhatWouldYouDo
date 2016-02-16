@@ -192,5 +192,7 @@ namespace mv.DataModel
                 .HasForeignKey(e => e.UserID2)
                 .WillCascadeOnDelete(false);
         }
+
+        public System.Data.Entity.DbSet<mv.Models.Register> Registers { get; set; }
     }
 }

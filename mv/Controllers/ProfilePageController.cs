@@ -29,9 +29,9 @@ namespace mv.Controllers
 
         public ActionResult Friends()
         {
-            //ession["UserID"] = 1;
+            Users u = (Users)Session["KullaniciLogin"];
             var friends = (from f in ent.UserRelationShips
-                           where f.UserID1 == 6 && f.Status == 2
+                           where f.UserID1 == u.ID && f.Status == 2
                            select f.UserID2).ToList();
             List<Users> friendDetails = new List<Users>();
             foreach (var item in friends)
