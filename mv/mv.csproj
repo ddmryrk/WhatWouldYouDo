@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProfilePageController.cs" />
     <Compile Include="Controllers\RateController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="DataModel\Posts.cs" />
     <Compile Include="DataModel\Rates.cs" />
     <Compile Include="DataModel\RateUserRelations.cs" />
+    <Compile Include="DataModel\sysdiagrams.cs" />
     <Compile Include="DataModel\UserRelationShips.cs" />
     <Compile Include="DataModel\Users.cs" />
     <Compile Include="Global.asax.cs">
@@ -216,18 +218,39 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chat\reset.css" />
+    <Content Include="Content\chat\style.css" />
     <Content Include="Content\images.jpg" />
     <Content Include="Content\lang-icon\english.png" />
     <Content Include="Content\lang-icon\turkish.png" />
+    <Content Include="Content\pi\basaksalli.jpg" />
+    <Content Include="Content\pi\cemozkilic.jpg" />
+    <Content Include="Content\pi\cetinacar.jpg" />
+    <Content Include="Content\pi\d.jpg" />
+    <Content Include="Content\pi\deadpool.jpg" />
+    <Content Include="Content\pi\denizdemiryurek.jpg" />
+    <Content Include="Content\pi\gizemirisen.jpg" />
+    <Content Include="Content\pi\helsing.jpg" />
+    <Content Include="Content\pi\ironman.jpg" />
+    <Content Include="Content\pi\natasharomaoff.jpg" />
+    <Content Include="Content\pi\vsikalık.jpg" />
     <Content Include="Content\Profile-image\cem.jpg" />
+    <Content Include="Content\ratePics\d1.jpg" />
+    <Content Include="Content\ratePics\d2.jpg" />
+    <Content Include="Content\ratePics\d3.jpg" />
+    <Content Include="Content\ratePics\d4.jpg" />
+    <Content Include="Content\ratePics\d5.jpg" />
+    <Content Include="Content\ratePics\d6.jpg" />
+    <Content Include="Content\ratePics\d7.jpg" />
+    <Content Include="Content\ratePics\deadpool.jpg" />
+    <Content Include="Content\ratePics\tammi.jpg" />
+    <Content Include="Content\ratePics\vap.jpg" />
     <Content Include="Content\star-rating.css" />
     <Content Include="Content\star-rating.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -236,12 +259,17 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Content\chat\style.scss" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery-1.7.2.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -259,7 +287,7 @@
     <Content Include="Scripts\star-rating_locale_pt-br.js" />
     <Content Include="Scripts\star-rating_locale_ru.js" />
     <Content Include="Scripts\star-rating_locale_ua.js" />
-    <Content Include="Scripts\_references.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -308,13 +336,23 @@
     <Content Include="Views\ProfilePage\About.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
+    <Content Include="Views\Rate\ShareRate.cshtml" />
+    <Content Include="Views\Rate\Rating.cshtml" />
+    <Content Include="Views\Message\Conversations.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\Messages.cshtml" />
+    <Content Include="Views\Message\SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Resources.en-US.resx">

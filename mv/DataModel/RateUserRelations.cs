@@ -12,8 +12,6 @@ namespace mv.DataModel
 
         public long UserID { get; set; }
 
-        public long UserIDRated { get; set; }
-
         public int RateID { get; set; }
 
         public virtual Rates Rates { get; set; }

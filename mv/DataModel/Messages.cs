@@ -12,7 +12,7 @@ namespace mv.DataModel
 
         public DateTime Datetime { get; set; }
 
-        public bool SendOrReceive { get; set; }
+        public long SendingID { get; set; }
 
         [Required]
         public string Message { get; set; }
@@ -20,5 +20,7 @@ namespace mv.DataModel
         public int ConversationID { get; set; }
 
         public virtual Conversations Conversations { get; set; }
+
+        public virtual Users Users { get; set; }
     }
 }

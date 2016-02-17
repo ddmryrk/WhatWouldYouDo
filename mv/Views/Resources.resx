@@ -141,6 +141,9 @@
   <data name="Register" xml:space="preserve">
     <value>Üye Ol</value>
   </data>
+  <data name="Share" xml:space="preserve">
+    <value>Paylaş</value>
+  </data>
   <data name="User" xml:space="preserve">
     <value>Kullanıcı</value>
   </data>

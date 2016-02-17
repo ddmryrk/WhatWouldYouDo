@@ -1,0 +1,25 @@
+﻿@using (Html.BeginForm("ShareRate", "Rate", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="file"  name="FileUpload2" accept="image/*" onchange="loadFile(event)" class="btn btn-default">
+            <img id="output" style="max-width:250px; max-height:250px" />
+            <script>
+                var loadFile = function (event) {
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        var output = document.getElementById('output');
+                        output.src = reader.result;
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                };
+            </script>
+
+        </div>
+        <div class="col-md-12">
+            <input type="submit" value=@mv.Views.Resources.Share class="btn btn-default" />
+        </div>
+    </div>
+}
+
+

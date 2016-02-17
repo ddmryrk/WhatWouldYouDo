@@ -11,7 +11,7 @@ namespace mv.Controllers
 {
     public class UsersController : Controller
     {
-        DataModel.Model1 ent = new DataModel.Model1();
+        Model1 ent = new Model1();
         // GET: Users
         public ActionResult Index()
         {
@@ -25,7 +25,7 @@ namespace mv.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(DataModel.Users u)
+        public ActionResult Login(Users u)
         {
             var kullanici = (from item in ent.Users
                              where item.Email == u.Email && item.Password == u.Password
@@ -56,16 +56,17 @@ namespace mv.Controllers
             if (Request.Files.Count > 0)
             {
                 var file = Request.Files[0];
-
                 if (file != null)
                 {
                     var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/Profile-image"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/pi"), fileName);
                     file.SaveAs(path);
-                    u.PictureLoc = path;
+                    u.PictureLoc = "~/Content/pi/" + fileName;
                 }
             }
-
+            u.SignDate = DateTime.Today;
+            u.ConfMail = true;
+            u.Deleted = false;
             ent.Users.Add(u);
             try
             {

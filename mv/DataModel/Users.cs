@@ -15,8 +15,10 @@ namespace mv.DataModel
             Complaints = new HashSet<Complaints>();
             Conversations = new HashSet<Conversations>();
             Conversations1 = new HashSet<Conversations>();
+            Messages = new HashSet<Messages>();
             Points = new HashSet<Points>();
             Posts = new HashSet<Posts>();
+            Rates = new HashSet<Rates>();
             RateUserRelations = new HashSet<RateUserRelations>();
             RateUserRelations1 = new HashSet<RateUserRelations>();
             UserRelationShips = new HashSet<UserRelationShips>();
@@ -27,6 +29,7 @@ namespace mv.DataModel
 
         [Required]
         [StringLength(100)]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
@@ -53,8 +56,10 @@ namespace mv.DataModel
         [StringLength(50)]
         public string City { get; set; }
 
+        [Required]
         public bool Gender { get; set; }
 
+        [Required]
         public DateTime Birthdate { get; set; }
 
         public DateTime SignDate { get; set; }
@@ -79,10 +84,16 @@ namespace mv.DataModel
         public virtual ICollection<Conversations> Conversations1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Messages> Messages { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Points> Points { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Posts> Posts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rates> Rates { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RateUserRelations> RateUserRelations { get; set; }

@@ -12,6 +12,7 @@ namespace mv.DataModel
         {
         }
 
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<BlackList> BlackList { get; set; }
         public virtual DbSet<Comments> Comments { get; set; }
         public virtual DbSet<Complaints> Complaints { get; set; }
@@ -23,6 +24,7 @@ namespace mv.DataModel
         public virtual DbSet<Posts> Posts { get; set; }
         public virtual DbSet<Rates> Rates { get; set; }
         public virtual DbSet<RateUserRelations> RateUserRelations { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<UserRelationShips> UserRelationShips { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
@@ -157,6 +159,12 @@ namespace mv.DataModel
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()
+                .HasMany(e => e.Messages)
+                .WithRequired(e => e.Users)
+                .HasForeignKey(e => e.SendingID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
                 .HasMany(e => e.Points)
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.UserID)
@@ -164,6 +172,12 @@ namespace mv.DataModel
 
             modelBuilder.Entity<Users>()
                 .HasMany(e => e.Posts)
+                .WithRequired(e => e.Users)
+                .HasForeignKey(e => e.UserID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.Rates)
                 .WithRequired(e => e.Users)
                 .HasForeignKey(e => e.UserID)
                 .WillCascadeOnDelete(false);
@@ -177,7 +191,7 @@ namespace mv.DataModel
             modelBuilder.Entity<Users>()
                 .HasMany(e => e.RateUserRelations1)
                 .WithRequired(e => e.Users1)
-                .HasForeignKey(e => e.UserIDRated)
+                .HasForeignKey(e => e.UserID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()
@@ -192,7 +206,5 @@ namespace mv.DataModel
                 .HasForeignKey(e => e.UserID2)
                 .WillCascadeOnDelete(false);
         }
-
-        public System.Data.Entity.DbSet<mv.Models.Register> Registers { get; set; }
     }
 }

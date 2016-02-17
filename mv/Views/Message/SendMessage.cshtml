@@ -1,0 +1,12 @@
+﻿@*<div class="chat-message clearfix">*@
+   @*@using (Ajax.BeginForm("SendMessage", "Message",new AjaxOptions { HttpMethod="POST" }))
+   {*@
+@using (Html.BeginForm("SendMessage", "Message", FormMethod.Post))
+{
+    <textarea id="Msg" name="Msg"></textarea>
+
+    <i class="fa fa-file-o"></i>
+    <i class="fa fa-file-image-o"></i>
+    <input id="Submit1" type="submit" value="submit" />
+   }
+@*</div>*@  <!-- end chat-message -->

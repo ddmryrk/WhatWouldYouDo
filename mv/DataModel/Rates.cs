@@ -19,9 +19,15 @@ namespace mv.DataModel
         [Required]
         public string PictureLoc { get; set; }
 
-        public byte StarPoint { get; set; }
+        public long UserID { get; set; }
+
+        public double StarPoint { get; set; }
 
         public int RateCount { get; set; }
+
+        public DateTime DateTime { get; set; }
+
+        public virtual Users Users { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RateUserRelations> RateUserRelations { get; set; }

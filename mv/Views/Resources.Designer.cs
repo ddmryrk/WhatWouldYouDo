@@ -133,6 +133,15 @@ namespace mv.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paylaş.
+        /// </summary>
+        public static string Share {
+            get {
+                return ResourceManager.GetString("Share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kullanıcı.
         /// </summary>
         public static string User {

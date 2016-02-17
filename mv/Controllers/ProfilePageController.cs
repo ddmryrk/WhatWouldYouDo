@@ -26,7 +26,6 @@ namespace mv.Controllers
             return PartialView(kullanici);
         }
 
-
         public ActionResult Friends()
         {
             Users u = (Users)Session["KullaniciLogin"];
