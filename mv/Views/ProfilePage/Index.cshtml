@@ -2,12 +2,13 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    mv.DataModel.Users u =  (mv.DataModel.Users)Session["KullaniciLogin"];
 }
 
 @try
 {
-    @Html.Action("About", "ProfilePage")
-    @Html.Action("Friends", "ProfilePage")
+    @Html.Action("About", "ProfilePage", new { uid = u.ID })
+    @Html.Action("Friends", "ProfilePage", new { uid = u.ID })
 
 }
 catch (HttpException ex)
