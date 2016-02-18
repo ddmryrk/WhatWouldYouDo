@@ -7,10 +7,10 @@
         <div  class="col-md-3">
 
             <a href="@Url.Action("About", "ProfilePage")" >
-                <img src="~/Content/images.jpg" class="img-circle" style="max-height:100px;max-width:100px" />
+                <img src="@Url.Content(@item.PictureLoc)" class="img-circle" style="max-height:100px;max-width:100px" />
             </a>
             <h3>@item.Name @item.Surname</h3>
-            <h3>@item.ID</h3>
+            
         </div>
     }
 </div>

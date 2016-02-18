@@ -31,6 +31,8 @@ namespace mv.Controllers
                              where item.Email == u.Email && item.Password == u.Password
                              select item).FirstOrDefault();
             Session["KullaniciLogin"] = kullanici;
+            //System.Web.Security.FormsAuthentication.SetAuthCookie(kullanici.Name + kullanici.Surname,true);
+
             return RedirectToAction("Index", "ProfilePage");
         }
 

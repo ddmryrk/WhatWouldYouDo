@@ -23,6 +23,7 @@
 </head>
 @using (Html.BeginForm("Rating", "Rate", FormMethod.Post))
 {
+    @Html.ActionLink("blala", "ShareRate","Rate")
     <div class="panel panel-primary" style="width:500px; height:680px; margin:auto; margin-top:50px">
         <div class="panel-heading">
             <h3 class="panel-title">@Model.Users.Name</h3>

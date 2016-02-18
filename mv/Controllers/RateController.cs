@@ -73,6 +73,9 @@ namespace mv.Controllers
                     var path = Path.Combine(Server.MapPath("~/Content/ratePics"), fileName);
                     file.SaveAs(path);
                     r.PictureLoc = "~/Content/ratePics/" + fileName;
+                    Users u = (Users)Session["KullaniciLogin"];
+                    r.DateTime = DateTime.Now;
+                    r.UserID = u.ID;
                     r.StarPoint = 0;
                     r.RateCount = 0;
                 }

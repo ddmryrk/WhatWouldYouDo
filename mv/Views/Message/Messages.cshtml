@@ -84,21 +84,17 @@
         </ul>
 
     </div> <!-- end chat-history -->
-   @Html.Action("SendMessage", "Message");
-   @* <div class="chat-message clearfix">
-    @using (Ajax.BeginForm("SendMessage", "Message", new AjaxOptions {HttpMethod="Post", UpdateTargetId="Message1" }))
-    {
-        @*<textarea id="Msg" name=@TempData["Msg"]></textarea>*@
-            @*<textarea id="Msg" name="Msg" itemid="Msg" >asdas</textarea>*@
-            @*<input id="Msg" type="text" name="Msg" />*@
-            @* @Html.TextArea("Msg")*@
+    @*@Html.Action("SendMessage", "Message");*@
+    <div class="chat-message clearfix">
+        @using (Ajax.BeginForm("SendMessage", "Message", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Message1" }))
+        {
+            <textarea id="Msg" name=@TempData["Msg"]></textarea>
+            <i class="fa fa-file-o"></i>
+            <i class="fa fa-file-image-o"></i>
 
-            @*<i class="fa fa-file-o"></i>*@
-            @*<i class="fa fa-file-image-o"></i>*@
-
-            @*@Html.ActionLink("Send", "SendMessage", new { ConversationID = Convert.ToInt32(Session["convID"]) })*@
+            @Html.ActionLink("Send", "SendMessage", new { ConversationID = Convert.ToInt32(Session["convID"]) })
         }
-    @*</div>*@  <!-- end chat-message -->
+    </div>   end chat-message
 </div> <!-- end chat -->
 
 <script id="message-template" type="text/x-handlebars-template">
