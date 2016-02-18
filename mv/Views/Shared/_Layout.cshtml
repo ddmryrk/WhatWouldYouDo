@@ -6,19 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div style="float:right">
-            @*Language Icons*@
-        <a href='@Url.Action("SetLanguage","Home",new { language = "tr-TR"})' title="Turkish">
-            <img src='@Url.Content("~/Content/lang-icon/turkish.png")' alt="Turkish" />
-        </a>|
-        <a href='@Url.Action("SetLanguage","Home",new { language = "en-US"})' title="English">
-            <img src='@Url.Content("~/Content/lang-icon/english.png")' alt="English" />
-        </a>
-    </div>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,25 +18,30 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("What Would You Do?", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                
+
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
                 @Html.Partial("_LoginPartial")
-
-
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />        
+        <hr />
     </div>
     <footer style="margin-bottom;text-align:center">
         <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
     </footer>
-    
+    <div style="float:right">
+        @*Language Icons*@
+        <a href='@Url.Action("SetLanguage","Home",new { language = "tr-TR"})' title="Turkish">
+            <img src='@Url.Content("~/Content/lang-icon/turkish.png")' alt="Turkish" />
+        </a>|
+        <a href='@Url.Action("SetLanguage","Home",new { language = "en-US"})' title="English">
+            <img src='@Url.Content("~/Content/lang-icon/english.png")' alt="English" />
+        </a>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
