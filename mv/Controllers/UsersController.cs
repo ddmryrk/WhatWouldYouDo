@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace mv.Controllers
 {
@@ -15,7 +16,6 @@ namespace mv.Controllers
         // GET: Users
         public ActionResult Index()
         {
-
             return View();
         }
 
@@ -25,15 +25,48 @@ namespace mv.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Users u)
+        public ActionResult Login(string Email,string Password, string returnUrl)
         {
-            var kullanici = (from item in ent.Users
-                             where item.Email == u.Email && item.Password == u.Password
-                             select item).FirstOrDefault();
-            Session["KullaniciLogin"] = kullanici;
-            //System.Web.Security.FormsAuthentication.SetAuthCookie(kullanici.Name + kullanici.Surname,true);
+            var model = ent.Users.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).FirstOrDefault();
 
-            return RedirectToAction("Index", "ProfilePage");
+            if (ModelState.IsValid)
+            {
+                using (Model1 entities = new Model1())
+                {
+                    string email = model.Email;
+                    string username = model.Name + " " + model.Surname;
+                    string password = model.Password;
+
+                    bool userValid = entities.Users.Any(user => user.Email == email && user.Password == password);
+
+                    if (userValid)
+                    {
+
+                        FormsAuthentication.SetAuthCookie(username, false);
+                        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                            && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    }
+                }
+            }
+            return View(model);
+        }
+
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Register()
@@ -78,11 +111,7 @@ namespace mv.Controllers
             {
                 string hata = ex.Message;
             }
-
             return RedirectToAction("Register");
-
         }
-
-
     }
 }
