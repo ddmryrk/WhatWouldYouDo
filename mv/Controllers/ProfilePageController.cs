@@ -15,22 +15,20 @@ namespace mv.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult About(Int64 uid)
         {
-            Users u = (Users)Session["KullaniciLogin"];
+           
             var kullanici = (from item in ent.Users
-                             where item.ID == u.ID
+                             where item.ID == uid
                              select item).FirstOrDefault();
 
             return PartialView(kullanici);
         }
 
-        public ActionResult Friends()
+        public ActionResult Friends(Int64 uid)
         {
-            Users u = (Users)Session["KullaniciLogin"];
             var friends = (from f in ent.UserRelationShips
-                           where f.UserID1 == u.ID && f.Status == 2
+                           where f.UserID1 == uid && f.Status == 2
                            select f.UserID2).ToList();
             List<Users> friendDetails = new List<Users>();
             foreach (var item in friends)
@@ -39,5 +37,7 @@ namespace mv.Controllers
             }
             return PartialView(friendDetails);
         }
+
+     
     }
 }
