@@ -23,3 +23,22 @@ select,
 textarea {
     max-width: 280px;
 }
+.post-content {
+    top:0;
+    left:0;
+    position: absolute;
+}
+
+.thumbnail{
+    position:relative;
+    text-align:center;
+}
+.thumbnail img {
+    opacity: 0.8;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.thumbnail img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
