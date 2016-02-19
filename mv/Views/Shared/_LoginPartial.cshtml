@@ -1,29 +1,28 @@
 ﻿@using Microsoft.AspNet.Identity
 @using mv.Views
-@*@if (Request.IsAuthenticated)*@
-@if(Session["KullaniciLogin"]!=null)
+@*@if(Session["KullaniciLogin"]!=null)*@
+@if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Profile", "Index", "ProfilePage")
-
-        </li>
-        <li>
-            @Html.ActionLink("Rate", "Index", "Rate")
-            
-        </li>
-        <li>
-            @Html.ActionLink("Messages", "Index", "Message")
-        </li>
-        <li>
-            @Html.ActionLink("Merhaba " + User.Identity.GetUserName() + "!", "Index", "ProfilePage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Profile", "Index", "ProfilePage")
+            </li>
+            <li>
+                @Html.ActionLink("Rate", "Index", "Rate")
+            </li>
+            <li>
+                @Html.ActionLink("Messages", "Index", "Message")
+            </li>
+            <li style="font-style:italic; font-weight:900">
+                @Html.ActionLink(User.Identity.GetUserName(), "Index", "ProfilePage", routeValues: null, htmlAttributes: new { title = "Go to User Profile Page" })
+            </li>
+            <li>@Html.ActionLink("Log off", "LogOff", "Users")</li>
+            @*<li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>*@
+        </ul>
     }
 }
 else
