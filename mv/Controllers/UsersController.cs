@@ -25,7 +25,7 @@ namespace mv.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string Email,string Password, string returnUrl)
+        public ActionResult Login(string Email, string Password, string returnUrl)
         {
             var model = ent.Users.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).FirstOrDefault();
 
@@ -50,7 +50,12 @@ namespace mv.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home");
+                            HttpCookie user = new HttpCookie("userID");
+                            user.Value = model.ID.ToString();
+                            user.Expires = DateTime.Now.AddHours(1);
+                            Response.Cookies.Add(user);
+                            Session["KullaniciLogin"] = model;
+                            return RedirectToAction("Index", "Home", model.ID);
                         }
                     }
                     else
@@ -112,6 +117,21 @@ namespace mv.Controllers
                 string hata = ex.Message;
             }
             return RedirectToAction("Register");
+        }
+
+        [HttpGet]
+        public ActionResult Search(string text)
+        {
+            ViewBag.SearchText = text; ;
+
+            //string alert = "alert('Nothing to show')";
+            //return JavaScript(alert);
+
+            var searchUsers = ent.Users.Where(u => u.Name.Contains(text) && u.Surname.Contains(text)).ToList();
+            if (String.IsNullOrEmpty(text))
+                return RedirectToAction("Index", "Home");
+            return View(searchUsers);
+
         }
     }
 }
