@@ -1,5 +1,6 @@
-﻿@model List<mv.DataModel.Users>
+﻿@model IEnumerable<mv.DataModel.Users>
 
+<br />
 @foreach (var item in Model)
 {
     <div class="col-md-3">
@@ -7,8 +8,5 @@
             <img src="@Url.Content(@item.PictureLoc)" class="img-circle" style="max-height:100px;max-width:100px" />
         </a>
         <h3>@item.Name @item.Surname</h3>
-        @*@Html.ActionLink(item.Name, "About", new { uid = item.ID });*@
     </div>
 }
-
-

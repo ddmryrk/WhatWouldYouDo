@@ -3,11 +3,31 @@
 @*@if(Session["KullaniciLogin"]!=null)*@
 @if (Request.IsAuthenticated)
 {
+    using (Html.BeginForm("Search", "Users", FormMethod.Get))
+    {
+        @*<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#btSearch').click(function () {
+                    if ($('#txtSearch[document_type]').val() != '') {
+                        alert("Nothing to search...!");
+                    }
+                    else {
+                        alert("diğeri...!");
+                    }
+                });
+            });
+        </script>*@
+        <input type="text" id="txtSearch" name="text" style="width:100px"/>
+        <input type="submit" value="Search" id="btSearch"/>
+    }
     using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-
         <ul class="nav navbar-nav navbar-right">
+            <li>
+
+            </li>
             <li>
                 @Html.ActionLink("Profile", "Index", "ProfilePage")
             </li>
