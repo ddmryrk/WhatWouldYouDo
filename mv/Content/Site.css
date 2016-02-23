@@ -14,7 +14,7 @@
 */
 .dl-horizontal dt {
     white-space: normal;
-    text-align:left;
+    text-align: left;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -23,22 +23,39 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .post-content {
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     position: absolute;
 }
 
-.thumbnail{
-    position:relative;
-    text-align:center;
-}
-.thumbnail img {
-    opacity: 0.8;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
+.thumbnail {
+    position: relative;
 }
 
-.thumbnail img:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
+    .thumbnail img {
+        opacity: 1.0;
+        filter: alpha(opacity=100); /* For IE8 and earlier */
+    }
+
+        .thumbnail img:hover {
+            opacity: 0.8;
+            filter: alpha(opacity=40); /* For IE8 and earlier */
+        }
+
+.yazi {
+    margin:50px;
+    width:200px;
+    height:60px;
+    text-align:center;
+    vertical-align:middle;
+    text-anchor:middle;
+    color: white;
+    font-size: larger;
+    font-family: Georgia;
+    border: solid 1px white;
+    background-color: black;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 }

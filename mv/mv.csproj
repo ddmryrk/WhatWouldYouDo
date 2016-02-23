@@ -57,9 +57,17 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SkyLinq.Linq, Version=0.3.5391.25999, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkyLinq.Linq.0.3.5391.25999\lib\portable-net45+win\SkyLinq.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.5840.25917, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.6\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -173,7 +181,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProfilePageController.cs" />
     <Compile Include="Controllers\RateController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -214,12 +221,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bg\complaints.jpg" />
+    <Content Include="Content\bg\idea.jpg" />
+    <Content Include="Content\bg\nnnnnk.png" />
+    <Content Include="Content\bg\rating.jpg" />
+    <Content Include="Content\bg\thinking.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chat\reset.css" />
     <Content Include="Content\chat\style.css" />
+    <Content Include="Content\bg\dreams.jpg" />
     <Content Include="Content\images.jpg" />
     <Content Include="Content\lang-icon\english.png" />
     <Content Include="Content\lang-icon\turkish.png" />
