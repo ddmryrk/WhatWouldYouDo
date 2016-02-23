@@ -2,18 +2,44 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    mv.DataModel.Users u =  (mv.DataModel.Users)Session["KullaniciLogin"];
+    //mv.DataModel.Users u = (mv.DataModel.Users)Session["KullaniciLogin"];
+
+
+    long userID = Convert.ToInt64(Request.Cookies["userID"].Value);
 }
 
 @try
 {
-    @Html.Action("About", "ProfilePage", new { uid = u.ID })
-    @Html.Action("Friends", "ProfilePage", new { uid = u.ID })
+    <div class="col-md-3" style="text-align:center;float:left">
+        @Html.Action("About", "ProfilePage", new { uid = userID })
+    </div>
 
+    <div style=" text-align: center;float:left" class="col-md-9">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#menu1">Friends</a></li>
+            <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Some content.</p>
+            </div>
+
+            <div id="menu1" class="tab-pane fade">
+                <br />
+                @Html.Action("Friends", "ProfilePage", new { uid = userID })
+            </div>
+
+            <div id="menu2" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <p>Some content in menu 2.</p>
+            </div>
+        </div>
+    </div>
 }
 catch (HttpException ex)
 {
     string hata = ex.Message;
 }
-
-

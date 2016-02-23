@@ -1,17 +1,12 @@
 ﻿@model mv.DataModel.Users
 @using mv.Views
-<div class="col-md-3" style="text-align:center;float:left;background-color:darkslategrey">
-    <br />
-    <br />
-    <img class="img-circle" src="@Url.Content(Model.PictureLoc)" width="200" height="200" />
-    <hr />
 
-    <b>@Resources.User : </b>@Model.Name  @Model.Surname<br />
-    <b>@Resources.Location : </b>@Model.Country | @Model.City<br />
-    <b>@Resources.Gender : </b> @if (Model.Gender) { Write(Resources.Male); } else { Write(Resources.Male); }
-    <br />
-    <b>@Resources.Birthdate : </b>@Model.Birthdate.ToShortDateString()<br />
-
-
-
-</div>
+<br />
+<br />
+<img class="img-circle" src="@Url.Content(Model.PictureLoc)" width="200" height="200" />
+<hr />
+<b>@Resources.User : </b>@Model.Name  @Model.Surname<br />
+<b>@Resources.Location : </b>@Model.Country | @Model.City<br />
+<b>@Resources.Gender : </b> @if (Model.Gender) { Write(Resources.Male); } else { Write(Resources.Male); }<br />
+<b>@Resources.Birthdate : </b>@Model.Birthdate.ToShortDateString()<br />
+<br />
