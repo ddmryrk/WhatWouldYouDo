@@ -1,0 +1,19 @@
+﻿@using (Html.BeginForm("Search", "Users", FormMethod.Get))
+{
+    @*<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).error(function () {
+                $('#btSearch').click(function () {
+                    if (!document.getElementById("txtSearch").value) {
+                        alert('@ViewData["Message"]');
+                        
+                    }
+                });
+            });
+        </script>*@
+
+    <div id="link">
+        <input type="text" id="txtSearch" name="text" style="width:100px" />
+        <input type="submit" value="Search" id="btSearch" />
+    </div>
+}

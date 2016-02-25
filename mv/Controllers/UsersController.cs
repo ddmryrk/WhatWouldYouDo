@@ -27,15 +27,30 @@ namespace mv.Controllers
         [HttpPost]
         public ActionResult Login(string Email, string Password, string returnUrl)
         {
-            var model = ent.Users.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).FirstOrDefault();
 
+            Users model = new Users();
             if (ModelState.IsValid)
             {
+
+                model = ent.Users.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).FirstOrDefault();
+
                 using (Model1 entities = new Model1())
                 {
-                    string email = model.Email;
-                    string username = model.Name + " " + model.Surname;
-                    string password = model.Password;
+                    string email = "";
+                    string username = "";
+                    string password = "";
+                    try
+                    {
+                        email = model.Email;
+                        username = model.Name + " " + model.Surname;
+                        password = model.Password;
+                    }
+                    catch (NullReferenceException ex)
+                    {
+
+                        string hata = ex.Message;
+                    }
+
 
                     bool userValid = entities.Users.Any(user => user.Email == email && user.Password == password);
 
@@ -124,10 +139,7 @@ namespace mv.Controllers
         {
             ViewBag.SearchText = text; ;
 
-            //string alert = "alert('Nothing to show')";
-            //return JavaScript(alert);
-
-            var searchUsers = ent.Users.Where(u => u.Name.Contains(text) && u.Surname.Contains(text)).ToList();
+            var searchUsers = ent.Users.Where(u => u.Name.Contains(text) || u.Surname.Contains(text)).ToList();
             if (String.IsNullOrEmpty(text))
                 return RedirectToAction("Index", "Home");
             return View(searchUsers);
